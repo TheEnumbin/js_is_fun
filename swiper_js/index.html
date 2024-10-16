@@ -3,94 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiper Slider with Slide Change Handling</title>
-
-  <!-- Swiper CSS -->
+  <title>Multiple Swiper Sliders with Internal Navigation</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
   <style>
-    .swiper-container {
-      width: 100%;
-      height: 300px;
+    body {
+      font-family: Arial, sans-serif;
     }
-
+    .slider-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px; /* Add space between sliders */
+    }
+    .swiper-container {
+      width: 300px;
+      height: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative; /* Allows absolute positioning of navigation buttons inside */
+    }
     .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #eee;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 1.5rem;
+      color: white;
     }
-
-    .swiper-slide[data-slidable="false"] {
-      background-color: #f8d7da; /* Red for non-slidable */
+    .swiper-button-next, .swiper-button-prev {
+      color: #000;
     }
-
-    .swiper-slide[data-slidable="true"] {
-      background-color: #d4edda; /* Green for slidable */
+    button {
+      margin-top: 10px;
+      display: block;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      background-color: black;
+    }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
 
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" data-slidable="true">Slide 1 (slidable)</div>
-      <div class="swiper-slide" data-slidable="false">Slide 2 (not slidable)</div>
-      <div class="swiper-slide" data-slidable="true">Slide 3 (slidable)</div>
-      <div class="swiper-slide" data-slidable="false">Slide 4 (not slidable)</div>
+<div class="slider-container">
+  <!-- Slider 1 -->
+    <div class="parent">
+        <div class="swiper-container slider1">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide 1</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide 2</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide 3</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide 4</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide 5</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide 6</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide 7</div>
+            <div class="swiper-slide" style="background-color: lightblue;" data-anchr="true">Slide 8</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide 9</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide 10</div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation inside -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <button class="slider-button">Go to Slide 2</button>
     </div>
 
-    <!-- Swiper navigation buttons -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+  <!-- Slider 2 -->
+    <div class="parent">
+        <div class="swiper-container slider2">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide A</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide B</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide C</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide D</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide E</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide F</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide G</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide H</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide I</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide J</div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation inside -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <button class="slider-button">Go to Slide 2</button>
+    </div>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Slider 3 -->
+    <div class="parent">
+        <div class="swiper-container slider3">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide X</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide Y</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide Z</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide AA</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide AB</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide AC</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide AD</div>
+            <div class="swiper-slide" style="background-color: lightblue;">Slide AE</div>
+            <div class="swiper-slide" style="background-color: lightgreen;">Slide AF</div>
+            <div class="swiper-slide" style="background-color: lightcoral;">Slide AG</div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation inside -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <button class="slider-button">Go to Slide 2</button>
+    </div>
 
-  <script>
-    // Function to initialize the Swiper and set up the slide change handler
-    function initializeSwiper() {
-      const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        on: {
-          slideChange: function () {
-            console.log('Slide changed to index:', swiper.activeIndex);  // Debug log
-            handleSlideChange(swiper);
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const sliders = document.querySelectorAll('.swiper-container');
+  const swipers = [];
+
+  sliders.forEach(slide => {
+      const swiper = new Swiper(slide, {
+          effect: 'slide',
+          grabCursor: true,
+          pagination: {
+              el: slide.querySelector('.swiper-pagination'),
+              clickable: true,
+          },
+          navigation: {
+              nextEl: slide.querySelector('.swiper-button-next'),
+              prevEl: slide.querySelector('.swiper-button-prev'),
+          },
+          on: {
+              slideChange: function () {
+                  handleSlideChange(swiper);
+              }
           }
-        }
       });
-    }
 
-    // Function to handle slide behavior based on the 'data-slidable' attribute
-    function handleSlideChange(swiperInstance) {
-      const currentSlide = swiperInstance.slides[swiperInstance.activeIndex];
-      const isSlidable = currentSlide.getAttribute('data-slidable') === 'true';
+      // Store the swiper instance in the array
+      swipers.push(swiper);
 
-      // Debug log to verify the 'data-slidable' value
-      console.log('Is current slide slidable?', isSlidable);
+      // Set up slide to button
+      console.log(slide)
+      const slideToButton = slide.parentNode.querySelector('.slider-button');
+      slideToButton.addEventListener('click', () => {
+          swiper.slideTo(4, 0);  // Slide to the 5th slide (index 4), without transition (speed = 0)
+          swiper.allowSlideNext = true;
+          swiper.allowSlidePrev = false;
+      });
+  });
+  function handleSlideChange(swiper) {
+      const slides = swiper.slides;
+      const currentIndex = swiper.activeIndex;
 
-      // Disable next/prev slide movement if the current slide is not slidable
-      if (isSlidable) {
-        swiperInstance.allowSlideNext = true;
-        swiperInstance.allowSlidePrev = true;
-      } else {
-        swiperInstance.allowSlideNext = false;
-        swiperInstance.allowSlidePrev = false;
+      if(slides[currentIndex+1].getAttribute('data-anchr') === 'true') {
+        swiper.allowSlideNext = false;
+        // swiper.allowSlidePrev = true;
       }
-    }
+      if(slides[currentIndex-1].getAttribute('data-anchr') !== 'true') {
+        // swiper.allowSlideNext = false;
+        swiper.allowSlidePrev = true;
+      }
+  }
+</script>
 
-    // Call the initialization function when the document is ready
-    document.addEventListener('DOMContentLoaded', function () {
-      initializeSwiper();  // Initialize the Swiper when the DOM is loaded
-    });
-  </script>
 </body>
 </html>

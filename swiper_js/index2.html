@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Swiper Sliders with Internal Navigation</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .slider-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px; /* Add space between sliders */
+    }
+    .swiper-container {
+      width: 300px;
+      height: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative; /* Allows absolute positioning of navigation buttons inside */
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: white;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #000;
+    }
+    button {
+      margin-top: 10px;
+      display: block;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <!-- Slider 1 -->
+  <div class="swiper-container slider1">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide 1</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide 2</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide 3</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide 4</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide 5</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide 6</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide 7</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide 8</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide 9</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide 10</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination1"></div>
+    <!-- Add Navigation inside -->
+    <div class="swiper-button-next swiper-button-next1"></div>
+    <div class="swiper-button-prev swiper-button-prev1"></div>
+    <button class="slider-button slider-button1">Go to Slide 2</button>
+  </div>
+
+  <!-- Slider 2 -->
+  <div class="swiper-container slider2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide A</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide B</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide C</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide D</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide E</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide F</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide G</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide H</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide I</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide J</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination2"></div>
+    <!-- Add Navigation inside -->
+    <div class="swiper-button-next swiper-button-next2"></div>
+    <div class="swiper-button-prev swiper-button-prev2"></div>
+    <button class="slider-button slider-button2">Go to Slide 2</button>
+  </div>
+
+  <!-- Slider 3 -->
+  <div class="swiper-container slider3">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide X</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide Y</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide Z</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide AA</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide AB</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide AC</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide AD</div>
+      <div class="swiper-slide" style="background-color: lightblue;">Slide AE</div>
+      <div class="swiper-slide" style="background-color: lightgreen;">Slide AF</div>
+      <div class="swiper-slide" style="background-color: lightcoral;">Slide AG</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination3"></div>
+    <!-- Add Navigation inside -->
+    <div class="swiper-button-next swiper-button-next3"></div>
+    <div class="swiper-button-prev swiper-button-prev3"></div>
+    <button class="slider-button slider-button3">Go to Slide 2</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  // Initialize all three Swipers
+  const slider1 = new Swiper('.slider1', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next1',
+      prevEl: '.swiper-button-prev1',
+    },
+    pagination: {
+      el: '.swiper-pagination1',
+      clickable: true,
+    },
+  });
+
+  const slider2 = new Swiper('.slider2', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next2',
+      prevEl: '.swiper-button-prev2',
+    },
+    pagination: {
+      el: '.swiper-pagination2',
+      clickable: true,
+    },
+  });
+
+  const slider3 = new Swiper('.slider3', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next3',
+      prevEl: '.swiper-button-prev3',
+    },
+    pagination: {
+      el: '.swiper-pagination3',
+      clickable: true,
+    },
+  });
+
+  // Button functionality to go to specific slides
+  document.querySelector('.slider-button1').addEventListener('click', function () {
+    slider1.slideTo(1);  // Go to Slide 2 in the first slider
+  });
+
+  document.querySelector('.slider-button2').addEventListener('click', function () {
+    slider2.slideTo(1);  // Go to Slide 2 in the second slider
+  });
+
+  document.querySelector('.slider-button3').addEventListener('click', function () {
+    slider3.slideTo(1);  // Go to Slide 2 in the third slider
+  });
+</script>
+
+</body>
+</html>
