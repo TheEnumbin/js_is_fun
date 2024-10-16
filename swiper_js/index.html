@@ -58,7 +58,7 @@
             <div class="swiper-slide" style="background-color: lightblue;">Slide 2</div>
             <div class="swiper-slide" style="background-color: lightgreen;">Slide 3</div>
             <div class="swiper-slide" style="background-color: lightcoral;">Slide 4</div>
-            <div class="swiper-slide" style="background-color: lightblue;">Slide 5</div>
+            <div class="swiper-slide" style="background-color: lightblue;"  data-anchr="true">Slide 5</div>
             <div class="swiper-slide" style="background-color: lightgreen;">Slide 6</div>
             <div class="swiper-slide" style="background-color: lightcoral;">Slide 7</div>
             <div class="swiper-slide" style="background-color: lightblue;" data-anchr="true">Slide 8</div>
@@ -141,7 +141,7 @@
           },
           on: {
               slideChange: function () {
-                  handleSlideChange(swiper);
+                  handleSlideChange(swiper, slide);
               }
           }
       });
@@ -153,23 +153,27 @@
       console.log(slide)
       const slideToButton = slide.parentNode.querySelector('.slider-button');
       slideToButton.addEventListener('click', () => {
+          slide.classList.add('specific')
           swiper.slideTo(4, 0);  // Slide to the 5th slide (index 4), without transition (speed = 0)
           swiper.allowSlideNext = true;
           swiper.allowSlidePrev = false;
       });
   });
-  function handleSlideChange(swiper) {
+  function handleSlideChange(swiper, slide) {
       const slides = swiper.slides;
       const currentIndex = swiper.activeIndex;
 
-      if(slides[currentIndex+1].getAttribute('data-anchr') === 'true') {
-        swiper.allowSlideNext = false;
-        // swiper.allowSlidePrev = true;
+      if(slide.classList.contains('specific')){
+        if(slides[currentIndex+1].getAttribute('data-anchr') === 'true') {
+          swiper.allowSlideNext = false;
+          swiper.allowSlidePrev = true;
+        }
+        if(slides[currentIndex].getAttribute('data-anchr') === 'true') {
+          swiper.allowSlideNext = true;
+          swiper.allowSlidePrev = false;
+        }
       }
-      if(slides[currentIndex-1].getAttribute('data-anchr') !== 'true') {
-        // swiper.allowSlideNext = false;
-        swiper.allowSlidePrev = true;
-      }
+     
   }
 </script>
 
