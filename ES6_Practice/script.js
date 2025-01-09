@@ -49,3 +49,14 @@ check_let();
 
 console.log("After calling function : ")
 console.log(let_variable)
+
+// Block scope for let
+
+function example() {
+  if (true) {
+    let x = 10; // Block-scoped
+    console.log(x); // Output: 10
+  }
+  console.log(x); // ReferenceError: x is not defined
+}
+example();
