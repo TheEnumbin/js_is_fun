@@ -60,3 +60,14 @@ function example() {
   console.log(x); // ReferenceError: x is not defined
 }
 example();
+
+
+// ****************************************************
+
+console.log("************ Const variable *********")
+console.log("Before declaration : ")
+
+console.log(value)
+
+const value = 42;
+value = 50; // TypeError: Assignment to constant variable
