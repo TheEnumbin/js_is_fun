@@ -6,8 +6,10 @@ console.log(var_variable)
 var var_variable = 1
 function check_var() {
     var_variable = 2
-    var var_variable_2 = 3
-    console.log("Block scoped variable 2")
+    if (var_variable == 2) {
+        var var_variable_2 = 3
+    }
+    console.log("Function scoped scoped variable 2")
     console.log(var_variable_2)
 }
 
@@ -36,6 +38,13 @@ function check_let() {
     let let_variable_2 = 3
     console.log("Block scoped variable 2")
     console.log(let_variable_2)
+
+    if (true) {
+        let x = 10; // Block-scoped
+        console.log(x); // Output: 10
+      }
+    // Below code will show error since let is block scoped and x is defined in if block.
+    // console.log(x); // ReferenceError: x is not defined
 }
 
 // Below two lines will show reference error since block scoped
@@ -50,24 +59,13 @@ check_let();
 console.log("After calling function : ")
 console.log(let_variable)
 
-// Block scope for let
-
-function example() {
-  if (true) {
-    let x = 10; // Block-scoped
-    console.log(x); // Output: 10
-  }
-  console.log(x); // ReferenceError: x is not defined
-}
-example();
-
 
 // ****************************************************
 
 console.log("************ Const variable *********")
 console.log("Before declaration : ")
 
-console.log(value)
+console.log(const_value) // Hoisted for const but in Temporal Dead Zone.
 
-const value = 42;
-value = 50; // TypeError: Assignment to constant variable
+const const_value = 42;
+const_value = 50; // TypeError: Assignment to constant variable
