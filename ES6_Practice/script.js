@@ -65,7 +65,11 @@ console.log(let_variable)
 console.log("************ Const variable *********")
 console.log("Before declaration : ")
 
-console.log(const_value) // Hoisted for const but in Temporal Dead Zone.
+// console.log(const_value) // Hoisted for const but in Temporal Dead Zone so it will show refrence error
 
 const const_value = 42;
-const_value = 50; // TypeError: Assignment to constant variable
+// const_value = 50; // TypeError: Assignment to constant variable
+
+const person = { name: "Alice" };
+person.name = "Bob"; // Valid
+console.log(person.name); // Output: Bob
