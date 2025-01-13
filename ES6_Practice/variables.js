@@ -1,5 +1,11 @@
+
+console.log(`*************************************************
+Variable Lesson Start
+`);
+
 // Example of hoisting: Wont give error if declared later. Show undefined
-console.log("************ Var variable *********")
+
+console.log("*** Var variable ***")
 console.log("Before declaration : ")
 console.log(var_variable)
 
@@ -27,7 +33,7 @@ console.log(var_variable)
 
 // ****************************************************
 
-console.log("************ Let variable *********")
+console.log("*** Let variable ***")
 console.log("Before declaration : ")
 
 // console.log(let_variable) // Let is hoisted but will show reference error because it is not initialized
@@ -62,7 +68,7 @@ console.log(let_variable)
 
 // ****************************************************
 
-console.log("************ Const variable *********")
+console.log("*** Const variable ***")
 console.log("Before declaration : ")
 
 // console.log(const_value) // Hoisted for const but in Temporal Dead Zone so it will show refrence error
@@ -70,6 +76,11 @@ console.log("Before declaration : ")
 const const_value = 42;
 // const_value = 50; // TypeError: Assignment to constant variable
 
-const person = { name: "Alice" };
-person.name = "Bob"; // Valid
-console.log(person.name); // Output: Bob
+const const_obj = { name: "Alice" };
+const_obj.name = "Bob"; // Valid
+console.log(const_obj.name); // Output: Bob
+
+console.log(` 
+Variable Lesson End
+*************************************************
+`);
