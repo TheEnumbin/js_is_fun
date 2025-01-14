@@ -22,6 +22,22 @@ I think you need to pay me ${person.debt - person.paid} more this week` // Summi
 
 console.log(multiline_string)
 
+// Tagged templates
+console.log(`
+*** Tagged templates Basic ***`)
+
+function tag(strings, ...values) {
+    console.log("Strings:", strings); // Array of strings, Elements of the array are the parts where the template literals are imploded.
+    console.log("Values:", values);   // Array of interpolated values, that template literals values
+    return "Processed Template";
+}
+
+const parsonName = "Alice";
+const age = 25;
+
+const result = tag`Hello, ${parsonName}. You are ${age} years old.`;
+console.log(result);
+
 console.log(` 
 Template Literals End
 *************************************************
