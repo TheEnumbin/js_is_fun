@@ -26,11 +26,25 @@ console.log(multiline_string)
 console.log(`
 *** Tagged templates Basic ***`)
 
+
 function tag(strings, ...values) {
-    console.log("Strings:", strings); // Array of strings, Elements of the array are the parts where the template literals are imploded.
-    console.log("Values:", values);   // Array of interpolated values, that template literals values
-    return "Processed Template";
+    console.log(`* Tagged Parameters *`)
+    console.log("Strings:", strings); // Array of strings, Elements of the array are the parts where the template literals are imploded. [ 'Hello, ', '. You are ', ' years old.' ]
+    console.log("Values:", values);   // Array of interpolated values, that template literals values [ 'Alice', 25 ]
+
+    console.log(`* Processed String *`)
+    const processed = strings.reduce(function (result, str, i) {
+        if (i < values.length) {
+            result += str + values[i];
+        } else {
+            result += str;
+        }
+        return result;
+    }, "");
+
+    return processed;
 }
+  
 
 const parsonName = "Alice";
 const age = 25;
