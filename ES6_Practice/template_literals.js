@@ -34,6 +34,14 @@ function tag(strings, ...values) {
 
     console.log(`* Processed String *`)
     const processed = strings.reduce(function (result, str, i) {
+        // Reduce function first parameter accumulator that is the current calculated total result for the operation
+        console.log(result);
+
+        // Reduce function second parameter accumulator that is the current element of the array
+        console.log(str);
+
+        console.log(values[i])
+
         if (i < values.length) {
             result += str + values[i];
         } else {
@@ -46,10 +54,11 @@ function tag(strings, ...values) {
 }
   
 
-const parsonName = "Alice";
+const parsonFirstName = "Alice";
+const parsonLastName = "Wonderland";
 const age = 25;
 
-const result = tag`Hello, ${parsonName}. You are ${age} years old.`;
+const result = tag`Hello, ${parsonFirstName} ${parsonLastName}. You are ${age} years old.`;
 console.log(result);
 
 console.log(` 
