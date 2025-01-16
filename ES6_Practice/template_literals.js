@@ -61,6 +61,21 @@ const age = 25;
 const result = tag`Hello, ${parsonFirstName} ${parsonLastName}. You are ${age} years old.`;
 console.log(result);
 
+function sanitize(strings, ...values) {
+  const escapeHTML = (str) =>
+    str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  
+  return strings.reduce((result, str, i) => {
+    const sanitizedValue = values[i] ? escapeHTML(values[i]) : "";
+    return result + str + sanitizedValue;
+  }, "");
+}
+
+const userInput = "<script>alert('Hacked!')</script>";
+const sanitizedOutput = sanitize`User input: ${userInput}`;
+console.log(sanitizedOutput);
+// Output: User input: &lt;script&gt;alert('Hacked!')&lt;/script&gt;
+
 console.log(` 
 Template Literals End
 *************************************************
