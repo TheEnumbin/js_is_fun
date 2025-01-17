@@ -52,14 +52,32 @@ function tag(strings, ...values) {
 
     return processed;
 }
-  
 
 const parsonFirstName = "Alice";
 const parsonLastName = "Wonderland";
 const age = 25;
 
 const result = tag`Hello, ${parsonFirstName} ${parsonLastName}. You are ${age} years old.`;
+console.log(`* Basic Tag function *`)
 console.log(result);
+
+function makeUpper(string, ...values){
+    const processed = string.reduce(function(accumulatedResult, currentValue, currentIndex){
+        if (values[currentIndex] != null){
+            accumulatedResult += accumulatedResult + currentValue + values[currentIndex].toUpperCase()
+        } else {
+            accumulatedResult += currentValue 
+        }
+        
+    }, '')
+    return processed
+}
+
+const wordtoUpper = "word to upper"
+
+const txtWithUpper = makeUpper`The next word -> ${wordtoUpper} will be upper case`
+console.log(`* Uppercase Tag function *`)
+console.log(txtWithUpper);
 
 function sanitize(strings, ...values) {
   const escapeHTML = (str) =>
@@ -74,7 +92,6 @@ function sanitize(strings, ...values) {
 const userInput = "<script>alert('Hacked!')</script>";
 const sanitizedOutput = sanitize`User input: ${userInput}`;
 console.log(sanitizedOutput);
-// Output: User input: &lt;script&gt;alert('Hacked!')&lt;/script&gt;
 
 console.log(` 
 Template Literals End
