@@ -65,22 +65,19 @@ console.log(`* Uppercase Tag function *`)
 
 function makeUpper(string, ...values){
     const processed = string.reduce(function(accumulatedResult, currentValue, currentIndex){
-        console.log(accumulatedResult);
-        console.log(currentValue);
-        console.log(values[currentIndex])
         if (values[currentIndex] != null){
             accumulatedResult += accumulatedResult + currentValue + values[currentIndex].toUpperCase()
         } else {
             accumulatedResult += currentValue 
         }
-        
+        return accumulatedResult
     }, '')
     return processed
 }
 
 const wordtoUpper = "word to upper"
 
-const txtWithUpper = makeUpper`The next word -> ${wordtoUpper} will be upper case`
+const txtWithUpper = `In this sentence ${makeUpper`The next word -> ${wordtoUpper} is upper case`}`
 
 console.log(txtWithUpper);
 
