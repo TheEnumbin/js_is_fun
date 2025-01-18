@@ -26,6 +26,7 @@ console.log(multiline_string)
 console.log(`
 *** Tagged templates Basic ***`)
 
+console.log(`* Basic Tag function *`)
 
 function tag(strings, ...values) {
     console.log(`* Tagged Parameters *`)
@@ -58,11 +59,15 @@ const parsonLastName = "Wonderland";
 const age = 25;
 
 const result = tag`Hello, ${parsonFirstName} ${parsonLastName}. You are ${age} years old.`;
-console.log(`* Basic Tag function *`)
 console.log(result);
+
+console.log(`* Uppercase Tag function *`)
 
 function makeUpper(string, ...values){
     const processed = string.reduce(function(accumulatedResult, currentValue, currentIndex){
+        console.log(accumulatedResult);
+        console.log(currentValue);
+        console.log(values[currentIndex])
         if (values[currentIndex] != null){
             accumulatedResult += accumulatedResult + currentValue + values[currentIndex].toUpperCase()
         } else {
@@ -76,7 +81,7 @@ function makeUpper(string, ...values){
 const wordtoUpper = "word to upper"
 
 const txtWithUpper = makeUpper`The next word -> ${wordtoUpper} will be upper case`
-console.log(`* Uppercase Tag function *`)
+
 console.log(txtWithUpper);
 
 function sanitize(strings, ...values) {
