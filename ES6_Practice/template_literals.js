@@ -95,6 +95,14 @@ const userInput = "<script>alert('Hacked!')</script>";
 const sanitizedOutput = sanitize`User input: ${userInput}`;
 console.log(sanitizedOutput);
 
+// Raw String
+console.log(`
+    *** Raw String ***`)
+
+const rawString = String.raw`This is a newline character: \n`;
+console.log(rawString);
+// Output: This is a newline character: \n
+
 console.log(` 
 Template Literals End
 *************************************************
