@@ -16,3 +16,25 @@ console.log(addTraditional(10, 10))
 console.log(`* Arrow function output *`)
 const addArrow = (a, b) => a + b;
 console.log(addArrow(5, 5))
+
+// With and without params
+console.log("*** With and without params ***")
+
+const withOutParams = () => console.log("Looging from Without Params")
+withOutParams();
+
+const withParams = param => console.log(`Logging with param and Passed param is ${param}`) // Paranthesis when single parameter is passed
+withParams("Parameter");
+
+console.log("*** Implicit and Explicit Return ***")
+// Explicit return
+console.log(`* Explicit *`)
+const addExplicit = (a, b) => {
+    return a + b;
+};
+console.log(addExplicit(2, 3));
+  
+// Implicit return
+console.log(`* Implicit *`)
+const addImplicit = (a, b) => a + b;
+console.log(addImplicit(2, 3));

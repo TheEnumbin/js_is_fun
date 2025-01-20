@@ -35,13 +35,13 @@ function tag(strings, ...values) {
 
     console.log(`* Processed String *`)
     const processed = strings.reduce(function (result, str, i) {
-        // Reduce function first parameter accumulator that is the current calculated total result for the operation
-        console.log(result);
+        // // Reduce function first parameter accumulator that is the current calculated total result for the operation
+        // console.log(result);
 
-        // Reduce function second parameter accumulator that is the current element of the array
-        console.log(str);
+        // // Reduce function second parameter accumulator that is the current element of the array
+        // console.log(str);
 
-        console.log(values[i])
+        // console.log(values[i])
 
         if (i < values.length) {
             result += str + values[i];
@@ -97,7 +97,7 @@ console.log(sanitizedOutput);
 
 // Raw String
 console.log(`
-    *** Raw String ***`)
+*** Raw String ***`)
 
 const rawString = String.raw`This is a newline character: \n`;
 console.log(rawString);
