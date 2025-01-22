@@ -49,7 +49,7 @@ function normalFunction() {
     }, 1000);
 }
   
-function arrayFunction() {
+function arrowFunction() {
     this.value = 10;
 
     setTimeout(() => {
@@ -59,4 +59,36 @@ function arrayFunction() {
   
 // Normal function can be called as constructor e.g. with new keyword
 new normalFunction();
-new arrayFunction();
+new arrowFunction();
+
+class Car {
+    constructor(make, model) {
+      this.make = make;
+      this.model = model;
+    }
+  
+    // Here "this" works because it is getting binded with the object when the object is called.
+    start() {
+      console.log(`${this.make} ${this.model} started`);
+    }
+
+    // Here "This" works becuase it takes the lexical scope
+    stopWithArrow = () => {
+        this.year = 2004
+        console.log(`${this.make} ${this.model} stopped at ${this.year}`)
+    }
+}
+
+const car1 = new Car("Toyota", "Corolla");
+car1.start();
+car1.stopWithArrow()
+
+// Here extracting the start function so that it does not get binded to the object. Thus it wont take the lexical "This"
+const extractedStart = car1.start;
+// extractedStart() //  This will cause error
+const boundStart = car1.start.bind(car1) // after binding this will work
+boundStart()
+
+// With arrow function no need of binding.
+const extractedStop = car1.stopWithArrow
+extractedStop()
