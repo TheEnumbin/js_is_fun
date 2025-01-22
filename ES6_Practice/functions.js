@@ -38,3 +38,25 @@ console.log(addExplicit(2, 3));
 console.log(`* Implicit *`)
 const addImplicit = (a, b) => a + b;
 console.log(addImplicit(2, 3));
+
+// This value
+console.log("*** This value ***")
+function normalFunction() {
+    this.value = 10;
+  
+    setTimeout(function () {
+      console.log("Normal:", this.value);
+    }, 1000);
+}
+  
+function arrayFunction() {
+    this.value = 10;
+
+    setTimeout(() => {
+        console.log("Arrow:", this.value);
+    }, 1000);
+}
+  
+// Normal function can be called as constructor e.g. with new keyword
+new normalFunction();
+new arrayFunction();
