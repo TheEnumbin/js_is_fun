@@ -92,3 +92,10 @@ boundStart()
 // With arrow function no need of binding.
 const extractedStop = car1.stopWithArrow
 extractedStop()
+
+console.log("*** Rest (...) parameters ***")
+const arrowWithRest = (...args) => {
+    console.log(args); // Array of arguments
+  };
+  
+arrowWithRest(1, 2, 3);
