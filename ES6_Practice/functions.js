@@ -93,7 +93,15 @@ boundStart()
 const extractedStop = car1.stopWithArrow
 extractedStop()
 
+// *** Rest (...) parameters ***
 console.log("*** Rest (...) parameters ***")
+
+function methosWithArgs(a, b) {
+    console.log(arguments)
+}
+
+methosWithArgs(1, 2, 3)
+
 const arrowWithRest = (...args) => {
     console.log(args); // Array of arguments
   };
