@@ -113,3 +113,24 @@ console.log("*** Arrow function in array related methods ***")
 const numbers = [1, 2, 3];
 const squares = numbers.map(num => num * num);
 console.log(squares);
+
+console.log("* Arrow function with template literals tag function with the reduce method earlier *")
+
+function tagWithArrow(strings, ...values) {
+    const processed = strings.reduce((result, str, i) => {
+        if (i < values.length) {
+            result += str + values[i];
+        } else {
+            result += str;
+        }
+    }, "");
+
+    return processed;
+}
+
+const PFNtagWithArrow = "Alice";
+const PLNtagWithArrow = "Wonderland";
+const agetagWithArrow = 25;
+
+const resulttagWithArrow = tag`Hello, ${PFNtagWithArrow} ${PLNtagWithArrow}. You are ${agetagWithArrow} years old.`;
+console.log(result);
