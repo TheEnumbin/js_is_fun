@@ -107,3 +107,9 @@ const arrowWithRest = (...args) => {
   };
   
 arrowWithRest(1, 2, 3);
+
+// Arrow function in array related methods
+console.log("*** Arrow function in array related methods ***")
+const numbers = [1, 2, 3];
+const squares = numbers.map(num => num * num);
+console.log(squares);
