@@ -21,14 +21,14 @@ console.log("* With passed param *")
 basicUsage(10)
 
 // Function ad default param
-console.log("*** Function ad default param ***")
+console.log("*** Function as default param ***")
 
-function paramMethod(number) {
-    return number + 2;
+function paramMethod() {
+    return 2 + 2;
 }
 
-function methodAsDefParam(num = paramMethod(num)){
+function methodAsDefParam(num = paramMethod()){
     console.log(num)
 }
-
+methodAsDefParam()
 methodAsDefParam(10)
