@@ -1,6 +1,14 @@
-const numbers = [1, 2, 3];
-const [a, b, c] = numbers;
+console.log(`*************************************************
+    Destructuring Lesson Start
+`);
 
-console.log(a); // Output: 1
-console.log(b); // Output: 2
-console.log(c); // Output: 3
+// Basic usage
+console.log("*** Basic usage ***")
+    
+
+const destructuringArray = [1, 2, 3];
+const [a, b, c] = destructuringArray;
+
+console.log(a);
+console.log(b);
+console.log(c);
