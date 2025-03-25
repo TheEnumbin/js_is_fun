@@ -14,7 +14,7 @@ console.log(b);
 console.log(c);
 
 
-// Basic usage
+// Skipping Element
 console.log("*** Skipping Element ***")
 
 const [d,,f] = [1, 2, 3]
@@ -33,4 +33,15 @@ console.log(firstName + ' ' + lastname)
 
 console.log("Others elements by rest  : ")
 console.log(othersAsRest)
+
+// Swapping Element
+console.log("*** Swapping Element ***")
+
+let first = "apple";
+let second = "banana";
+
+[first, second] = [second, first];
+
+console.log(first);  // Output: banana
+console.log(second); // Output: apple
 
