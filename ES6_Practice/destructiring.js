@@ -48,18 +48,18 @@ console.log(second); // Output: apple
 // Object destructuring
 console.log("*** Object destructuring with renaming element name ***")
 
-const person = { name: "Enam", age: 25, city: "Dhaka" };
+const destructureObject = { name: "Enam", userAge: 25, city: "Dhaka" };
 
-const {username, age, address} = person;
+const {name: username, userAge, city: address} = destructureObject;
 
 console.log("Old object")
 
-console.log(person);
+console.log(destructureObject);
 
 console.log("After destructuring and renaming name to username and city to address")
 
 console.log(`User name : ${username}`);
-console.log(`User age : ${age}`);
+console.log(`User age : ${userAge}`);
 console.log(`User address : ${address}`);
 
 
