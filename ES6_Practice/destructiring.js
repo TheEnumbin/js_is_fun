@@ -2,8 +2,8 @@ console.log(`*************************************************
     Destructuring Lesson Start
 `);
 
-// Basic usage
-console.log("*** Basic usage ***")
+// Array destructuring
+console.log("*** Array destructuring ***")
     
 
 const destructuringArray = [1, 2, 3];
@@ -44,4 +44,24 @@ let second = "banana";
 
 console.log(first);  // Output: banana
 console.log(second); // Output: apple
+
+// Object destructuring
+console.log("*** Object destructuring with renaming element name ***")
+
+const person = { name: "Enam", age: 25, city: "Dhaka" };
+
+const {username, age, address} = person;
+
+console.log("Old object")
+
+console.log(person);
+
+console.log("After destructuring and renaming name to username and city to address")
+
+console.log(`User name : ${username}`);
+console.log(`User age : ${age}`);
+console.log(`User address : ${address}`);
+
+
+
 
