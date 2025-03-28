@@ -63,5 +63,13 @@ console.log(`User age : ${userAge}`);
 console.log(`User address : ${address}`);
 
 
+// Object destructuring
+console.log("*** Nested Object destructuring ***")
 
+const nestedObject = { name: "Enam", userAge: 25, address: {city: "Dhaka", postal_code : "1219", country: "Bangladesh"} };
 
+const {name: person_name, userAge: user_age, address: {city, postal_code, country}} = nestedObject
+console.log(`Name : ${person_name}`);
+console.log(`Age : ${user_age}`);
+console.log(`City : ${city}`);
+console.log(`Country : ${country}`);
