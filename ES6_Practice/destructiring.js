@@ -73,3 +73,10 @@ console.log(`Name : ${person_name}`);
 console.log(`Age : ${user_age}`);
 console.log(`City : ${city}`);
 console.log(`Country : ${country}`);
+
+const employee = { id: 101, name: "Emma", role: "Developer", department: "IT" };
+const { id, name, ...rest } = employee;
+
+console.log(id);   // Output: 101
+console.log(name); // Output: Emma
+console.log(rest); // Output: { role: 'Developer', department: 'IT' }
