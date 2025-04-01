@@ -83,3 +83,14 @@ const { id, employee_name, ...rest } = employee;
 console.log(id);
 console.log(employee_name);
 console.log(rest);
+
+// Dustructuing in function parameter
+console.log("*** Dustructuing in function parameter ***")
+
+function destructureInParam({ name, age }) {
+    console.log(`${name} is ${age} years old.`);
+  }
+  
+const paramToUse = { name: "Sophia", age: 28 };
+destructureInParam(paramToUse);
+
