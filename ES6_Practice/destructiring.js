@@ -74,9 +74,12 @@ console.log(`Age : ${user_age}`);
 console.log(`City : ${city}`);
 console.log(`Country : ${country}`);
 
-const employee = { id: 101, name: "Emma", role: "Developer", department: "IT" };
-const { id, name, ...rest } = employee;
+// Object destructuring
+console.log("*** Using REST Operatior for destructuring ***")
 
-console.log(id);   // Output: 101
-console.log(name); // Output: Emma
-console.log(rest); // Output: { role: 'Developer', department: 'IT' }
+const employee = { id: 101, employee_name: "Enam", role: "Developer", department: "Software" };
+const { id, employee_name, ...rest } = employee;
+
+console.log(id);
+console.log(employee_name);
+console.log(rest);
