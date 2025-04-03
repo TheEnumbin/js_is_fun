@@ -87,10 +87,15 @@ console.log(rest);
 // Dustructuing in function parameter
 console.log("*** Dustructuing in function parameter ***")
 
-function destructureInParam({ name, age }) {
+function destructureInParam({ name = "Guest", age = 18 } = {}) {
     console.log(`${name} is ${age} years old.`);
   }
   
 const paramToUse = { name: "Sophia", age: 28 };
+console.log(`With param`);
 destructureInParam(paramToUse);
+console.log(`With default param`);
+destructureInParam();
+
+
 
