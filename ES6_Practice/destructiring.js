@@ -98,4 +98,15 @@ console.log(`With default param`);
 destructureInParam();
 
 
+const users = [
+  ["Alice", 25],
+  ["Bob", 30],
+  ["Charlie", 28]
+];
+
+for (const [name, age] of users) {
+  console.log(`${name} is ${age} years old.`);
+}
+
+
 
