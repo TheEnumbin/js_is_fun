@@ -97,16 +97,23 @@ destructureInParam(paramToUse);
 console.log(`With default param`);
 destructureInParam();
 
+// Dustructuing while looping
+console.log("*** Dustructuing while looping ***")
 
-const users = [
+console.log("Static elements")
+const usersLoop = [
   ["Alice", 25],
   ["Bob", 30],
   ["Charlie", 28]
 ];
 
-for (const [name, age] of users) {
+for (const [name, age] of usersLoop) {
   console.log(`${name} is ${age} years old.`);
 }
 
+console.log("Dynamic elements as key value")
+const objectsLoop = { name: "David", age: 22, grade: "A" };
 
-
+for (const [key, value] of Object.entries(objectsLoop)) {
+  console.log(`${key}: ${value}`);
+}
