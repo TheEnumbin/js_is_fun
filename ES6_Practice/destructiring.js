@@ -117,3 +117,13 @@ const objectsLoop = { name: "David", age: 22, grade: "A" };
 for (const [key, value] of Object.entries(objectsLoop)) {
   console.log(`${key}: ${value}`);
 }
+
+// Dynamically changing property names while distructuring
+console.log("*** Dynamically changing property names while distructuring ***")
+
+// Setting 
+const key = "username";
+const user = { username: "mark123" };
+
+const { [key]: userName } = user;
+console.log(userName); // Output: mark123
