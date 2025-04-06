@@ -127,3 +127,14 @@ const user = { username: "mark123" };
 
 const { [key]: userName } = user;
 console.log(userName); // Output: mark123
+
+
+const students = [
+  { name: "Liam", age: 20 },
+  { name: "Olivia", age: 21 }
+];
+
+const [{ name: firstStudent }, { name: secondStudent }] = students;
+
+console.log(firstStudent);  // Output: Liam
+console.log(secondStudent); // Output: Olivia
