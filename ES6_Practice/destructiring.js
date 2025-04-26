@@ -138,3 +138,14 @@ const [{ name: firstStudent }, { name: secondStudent }] = students;
 
 console.log(firstStudent);  // Output: Liam
 console.log(secondStudent); // Output: Olivia
+
+
+const apiResponse = {
+  status: "success",
+  data: {
+    user: { id: 42, name: "Ethan", email: "ethan@mail.com" },
+    location: { city: "Berlin", country: "Germany" }
+  }
+};
+
+// Extract `name`, `email`, and `city` using destructuring
