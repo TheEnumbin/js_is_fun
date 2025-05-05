@@ -26,3 +26,8 @@ const obj2 = { b: 99, c: 3 };
 const merged = { ...obj1, ...obj2 };
 
 console.log(merged); // { a: 1, b: 99, c: 3 }
+
+const obj = { x: 1, y: 2 };
+const copy = { ...obj };
+
+console.log(copy); // Output: { x: 1, y: 2 }
