@@ -31,3 +31,9 @@ const obj = { x: 1, y: 2 };
 const copy = { ...obj };
 
 console.log(copy); // Output: { x: 1, y: 2 }
+
+const obj3 = { a: 1, b: { c: 2 } };
+const copy2 = { ...obj3 };
+
+copy2.b.c = 99;
+console.log(obj3.b.c); // 99 (both point to same inner object)
